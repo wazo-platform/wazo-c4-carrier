@@ -7,6 +7,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     sipsak \
     sip-tester \
     sngrep \
+    net-tools \
     ngrep \
     curl \
     sudo \
