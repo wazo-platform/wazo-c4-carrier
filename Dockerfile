@@ -1,18 +1,18 @@
-FROM alpine:3.10
+FROM debian:buster-slim
 LABEL maintainer="Wazo Authors <dev@wazo.community>"
 ENV VERSION 1.0.0
-
-RUN apk add --update \
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     bash \
     sudo \
-    netcat-openbsd \
-    iproute2 \
+    sipsak \
+    sip-tester \
     sngrep \
     ngrep \
-    sipsak \
-    sipp \
     curl \
-    jq
-
+    sudo \
+    netcat \
+    consul \
+    iproute2 \
+    && apt-get clean
 COPY ./scenarios/ /scenarios/
 WORKDIR /scenarios/
