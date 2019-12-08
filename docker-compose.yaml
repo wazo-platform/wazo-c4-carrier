@@ -1,0 +1,18 @@
+version: '2'
+services:
+  load_balancer:
+    image: 'wazopbx/wazo-c4-carrier-lb:latest'
+    ports:
+      - "5060:5060/udp"
+    environment:
+      LISTEN: udp:eth0:5060
+      DISPATCHER_LIST: >-
+        # setid(int) destination(sip uri) flags(int,opt) priority(int,opt) attributes(str,opt)\n
+        1 sip:carrier1:5060 0 5\n
+        1 sip:carrier2:5060 0 5
+  carrier1:
+    image: 'wazopbx/wazo-c4-carrier:latest'
+    entrypoint: 'sipp -sf /scenarios/uas.xml'
+  carrier2:
+      image: 'wazopbx/wazo-c4-carrier:latest'
+      entrypoint: 'sipp -sf /scenarios/uas.xml'
