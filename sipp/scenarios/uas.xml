@@ -77,7 +77,6 @@
 
     ]]>
   </send>
-  <pause milliseconds="500"/>
   <recv request="ACK"
         optional="true"
         rtd="true"
