@@ -52,7 +52,7 @@
 
     ]]>
   </send>
-
+  <pause milliseconds="500"/>
   <send retrans="500">
     <![CDATA[
 
@@ -77,7 +77,7 @@
 
     ]]>
   </send>
-
+  <pause milliseconds="500"/>
   <recv request="ACK"
         optional="true"
         rtd="true"
