@@ -1,6 +1,6 @@
 # wazo-c4-carrier
 
-This repo provides a sipp fake carrier for testing purposes
+This repo provides a sipp fake carrier for testing purposes.
 
 ## Usage
 
